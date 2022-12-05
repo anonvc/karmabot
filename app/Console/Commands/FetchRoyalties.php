@@ -43,7 +43,7 @@ class FetchRoyalties extends Command
      */
     public function handle()
     {
-        $transactions = Transaction::where('royalty',null)->limit(100)->with('project')->with('wallet')->get();
+        $transactions = Transaction::where('royalty',null)->limit(10)->with('project')->with('wallet')->get();
         if(count($transactions) == 0)
         {
           return Command::SUCCESS;
