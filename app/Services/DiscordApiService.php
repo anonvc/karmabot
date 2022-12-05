@@ -28,6 +28,7 @@ class DiscordApiService {
 
   public function sendBotMessage($channel_id, $title,$message, $icon)
   {
+
     $embed_data = $this->createEmbedData($title,$message,$icon);
     Http::withHeaders(['Authorization' => 'Bot '.env('DISCORD_BOT_TOKEN')])->throw()->post($this->uri.'/channels/'.$channel_id.'/messages',[
       'embeds' => [$embed_data]
@@ -37,14 +38,13 @@ class DiscordApiService {
 
   public function createEmbedData($title,$message,$icon)
   {
-    $logoUrl = 'https://s2.coinmarketcap.com/static/img/coins/64x64/18876.png';
+    $logoUrl = 'https://karmabot.app/logo.png';
     $iconUrl = $logoUrl;
 
     if($icon != null)
     {
-      $iconUrl = config('app.url').'/icons/'.$icon; 
+      $iconUrl = 'https://karmabot.app/icons/'.$icon; 
     }
-
     $embed_data = [
         'type' => 'article',
         'thumbnail' => [

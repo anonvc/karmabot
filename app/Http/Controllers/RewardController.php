@@ -84,7 +84,7 @@ class RewardController extends Controller
 
     $request->validate([
       'rewardId' => 'nullable|integer|min:1',
-      'name' => 'required|string|min:5|max:100',
+      'name' => 'required|string|min:3|max:100',
       'description' => 'required|string|min:5|max:200',
       'icon' => 'required_without:rewardId|image|mimes:png,gif,jpg,jpeg|max:600',
       'price' => 'required|integer|min:1',
@@ -137,7 +137,7 @@ class RewardController extends Controller
     if($project->discord_channel_id != null && !$request->has('rewardId'))
     {
       $title = ':mega: New Reward Available';
-      $message = '__**'.$reward->name."**__\n".$reward->description."\n\n".'**Karma:** '.$reward->priceInPoints." :coin: \n".'**Available:** '.$reward->inventory." \n\n".'[**Claim this reward**]('.config('app.url').'/claim/'.$reward->id.')'." \n\n";
+      $message = '__**'.$reward->name."**__\n".$reward->description."\n\n".'**Karma:** '.$reward->priceInPoints." KP \n".'**Available:** '.$reward->inventory." \n\n".'[**Claim this reward**]('.config('app.url').'/claim/'.$reward->id.')'." \n\n";
 
       SendDiscordMessage::dispatch($project->discord_guild_id,$project->discord_channel_id,$title,$message,$reward->icon);
     }
