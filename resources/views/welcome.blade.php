@@ -62,10 +62,10 @@
                 <h1 class="text-4xl mx-auto text-center font-bold sm:text-center sm:text-6xl">10X your royalty fulfillement rate</h1>
                 <p class="mt-6 max-w-2xl mx-auto text-xl leading-8 text-gray-500 font-medium sm:text-center">Karmabot helps track, manage, and reward royalty payments for NFT communities & creators on Solana.</p>
                 <div class="mt-8 flex gap-x-4 sm:justify-center">
-                  <a href="#" class="inline-block rounded-lg bg-brand-purple-light px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-brand-purple-dark">
+                  <a href="/auth/discord/redirect" class="inline-block rounded-lg bg-brand-purple-light px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-brand-purple-dark">
                     Sign in with Discord
                   </a>
-                  <a href="#" class="inline-block rounded-lg bg-brand-pink-dark px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-brand-pink-dark">
+                  <a href="https://discord.gg/NxHjH2RF" target="_blank" class="inline-block rounded-lg bg-brand-pink-dark px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-brand-pink-dark">
                     Live demo on Discord
                   </a>
                 </div>
