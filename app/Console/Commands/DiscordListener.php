@@ -48,9 +48,44 @@ class DiscordListener extends Command
             'token' => config('services.discord.token'),
         ]);
 
-        
+
         $discord->on('ready', function (Discord $discord) use ($discordApiService) {
 
+            $command = new DiscordCommand($discord, ['name' => 'karma', 'description' => 'Get karma for any wallet' ,'options' => [
+              [
+                'type' => 3,
+                'name' => 'wallet',
+                'description' => 'Input your Solana or Ethereum wallet address',
+                'required' => true,
+              ]
+            ]]);
+            $discord->application->commands->save($command);
+
+
+            $command = new DiscordCommand($discord, ['name' => 'airdrop', 'description' => 'Airdrop karma to any wallet' ,'dm_permission' => false,'default_member_permissions' => "0",'options' => [
+              [
+                'type' => 3,
+                'name' => 'wallet',
+                'description' => 'Solana or Ethereum wallet address to airdrop karma to',
+                'required' => true,
+              ],
+              [
+                'type' => 4,
+                'name' => 'karma',
+                'description' => 'Amount of karma points to airdrop',
+                'required' => true,
+              ],
+            ]]);
+
+            $discord->application->commands->save($command);
+
+            $command = new DiscordCommand($discord, ['name' => 'rewards', 'description' => 'View available rewards']);
+            $discord->application->commands->save($command);
+
+            $command = new DiscordCommand($discord, ['name' => 'leaderboard', 'description' => 'View the leaderboard']);
+            $discord->application->commands->save($command);
+         
+         
             $discord->listenCommand('rewards', function (Interaction $interaction) use ($discord,$discordApiService) {
                   $interaction->acknowledgeWithResponse();
                   $project = Project::where('discord_guild_id', $interaction->guild_id)->first();
