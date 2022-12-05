@@ -82,7 +82,7 @@
               <dl>
                 <dt class="truncate text-sm font-medium text-gray-500">Daily Volume</dt>
                 <dd>
-                  <p class="text-lg font-medium text-gray-900">{{ $allTransactions->where('blockTime','>',\Carbon\Carbon::yesterday()->endOfDay())->sum('price') }} {{ $allTransactions->first()->currency }}</p>
+                  <p class="text-lg font-medium text-gray-900">{{ $allTransactions->where('blockTime','>',\Carbon\Carbon::yesterday()->endOfDay())->sum('price') }} {{ $project->chain->currency }}</p>
                 </dd>
               </dl>
             </div>
