@@ -5,8 +5,9 @@ Karmabot is a platform & discord bot to track, manage, and incentivize royalty p
 
 Royalties are unenforceable on-chain, making voluntary royalties the next best thing. Karmabot aims to provide creators with the tools they need to incentivize & increase voluntary royalty payments via gamification, rewards, and automated discord notifications.
 
-
 [Karmabot.app](https://karmabot.app): Signup to install karmabot on your own server.
+
+[Demo Video](https://www.youtube.com/watch?v=cddJuQeeBdM): Watch a video demo of Karmabot.
 
 [Demo Discord](https://discord.gg/NxHjH2RF): Interact with karmabot on the demo server
 
