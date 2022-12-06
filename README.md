@@ -1,66 +1,105 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Karmabot.app
 
-## About Laravel
+Karmabot is a platform & discord bot to track, manage, and incentivize royalty payments for Solana communities & creators.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Royalties are unenforceable on-chain, making voluntary royalties the next best thing. Karmabot aims to provide creators with the tools they need to incentivize & increase voluntary royalty payments via gamification, rewards, and automated discord notifications.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[Karmabot.app](https://karmabot.app): Signup to install karmabot on your own server.
 
-## Learning Laravel
+[Demo Discord](https://discord.gg/NxHjH2RF): Interact with karmabot on the demo server
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+[Demo Member Dashboard](https://karmabot.app/y00ts): Try out the demo member dashboard.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Features
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Easily track royalty payments
+  - Karmabot automatically tracks every transaction across all marketplaces to provide you with detailed analytics on your primary source of revenue.
 
-### Premium Partners
+![alt text](https://karmabot.app/dashboard.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+### Reward your top supporters automatically
+  - Karmabot will automatically distribute Karma Points to every royalty-paying wallet.
+  - The rate at which Karma Points are distributed can be customized.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![alt text](https://karmabot.app/karma.png)
 
-## Code of Conduct
+### Gamify paying royalties
+  - Karmabot turns the chore of paying royalties into a competitive & rewarding game.
+  - Members of your community can compete in the leaderboard, exchange their Karma Points for exclusive rewards and more.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![alt text](https://karmabot.app/member_dashboard.png)
 
-## Security Vulnerabilities
+### Set & forget Discord integration
+  - Once installed on your discord server, Karmabot will frequently & automatically post notifications to engage your community.
+  - Members of your community can also interact with Karmabot with the following commands:
+    - /rewards: View available rewards
+    - /leaderboard: View top 10 leaderboard
+    - /karma {wallet}: Check the Karma Points balance of any wallet in the community
+    - /airdrop (admin only): Airdrop Karma Points to any wallet
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![alt text](https://karmabot.app/discordbot.png)
 
-## License
+## Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Requirements**
+
+
+Install my-project with npm
+
+```
+PHP >= 8.1
+Composer
+MySQL
+MySQL PHP Extension
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
+```
+
+(All of these should be included in your PHP installation)
+
+**Installation**
+
+- Clone this repo
+- Rename .env.example to .env and add the following after replacing the XXXX placeholders (You'll need to create a discord app, and an alchemy.com account)
+
+```
+DISCORD_URI=https://discord.com/api/
+DISCORD_APP_ID=XXXX
+DISCORD_PUBLIC_KEY=XXXX
+DISCORD_BOT_TOKEN=XXXX
+DISCORD_SECRET=XXXX
+
+ALCHEMY_KEY=XXXX
+ALCHEMY_URI=https://solana-mainnet.g.alchemy.com/v2/
+```
+
+- Create a new mysql database and update the following
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=XXXX
+DB_USERNAME=XXXX
+DB_PASSWORD=XXXX
+```
+- Run the following commands
+```
+  composer update
+  php artisan key:generate
+  php artisan migrate
+  npm install
+  ```
+- Run ```crontab -e``` and input the following after replacing the placeholder path
+
+```
+ * * * * * cd ~/path/to/this/repo && php artisan schedule:run >> /dev/null 2>&1
+```
+    
