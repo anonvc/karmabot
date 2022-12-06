@@ -137,7 +137,7 @@ class RewardController extends Controller
     if($project->discord_channel_id != null && !$request->has('rewardId'))
     {
       $title = ':mega: New Reward Available';
-      $message = '__**'.$reward->name."**__\n".$reward->description."\n\n".'**Karma:** '.$reward->priceInPoints." KP \n".'**Available:** '.$reward->inventory." \n\n".'[**Claim this reward**]('.config('app.url').'/claim/'.$reward->id.')'." \n\n";
+      $message = '__**'.$reward->name."**__\n".$reward->description."\n\n".'**Karma:** '.$reward->priceInPoints." KP \n".'**Available:** '.$reward->inventory." \n\n".'[**Claim this reward**]('.config('app.url').'/'.$project->collection_uid.')'." \n\n";
 
       SendDiscordMessage::dispatch($project->discord_guild_id,$project->discord_channel_id,$title,$message,$reward->icon);
     }
