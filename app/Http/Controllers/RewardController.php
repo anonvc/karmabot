@@ -115,7 +115,7 @@ class RewardController extends Controller
         $imageName = time().'.'.$request->icon->extension();
         $request->icon->move(public_path('icons'), $imageName);
       }
-      catch(\Exception $exception)
+      catch(\Exception $e)
       {
         return redirect()->back()->withInput()->withErrors(['icon' => ['There was an error uploading your icon. Error: '.$e->getMessage()]]);
       }

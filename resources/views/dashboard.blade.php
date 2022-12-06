@@ -5,7 +5,7 @@
 <style>
   .selectedTimeframe {
     border-width: 2px;
-    border-color: rgb(101, 163, 13);
+    border-color: rgb(93, 19, 124);
     border-radius: 0.5rem;
     padding: 0.25rem;
   }
